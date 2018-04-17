@@ -1,0 +1,18 @@
+/*********************
+链接数据库
+*********************/
+Class.forName("com.mysql.jdbc.Driver");
+Connection c;
+Statement st;
+ResultSet rs rs1,rs2,rs3;
+String sql,sql1,sql2,sql3;
+sql="select * from 表名 where ";//查找
+sql1="delete from 表名 where ";//删除
+sql2="insert into 表名( , , ) value(' ',' ',' ')";//添加
+sql3="update 表名 set       where         ";//修改
+c=DriverManager.getConnection("jdbc:mysql://localhost:3306/数据库名","root","123456");
+st=c.createStatement();
+rs=st.executeQuery(sql);
+rs1=st.executeUpdate(sql1);
+rs2=st.executeUpdate(sql2);
+rs3=st.executeUpdate(sql3);
